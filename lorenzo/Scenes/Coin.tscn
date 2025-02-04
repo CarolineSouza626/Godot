@@ -1,0 +1,224 @@
+[gd_scene load_steps=21 format=3 uid="uid://dvfrip02tajll"]
+
+[ext_resource type="Script" path="res://Scripts/coin.gd" id="1_k3516"]
+[ext_resource type="Texture2D" uid="uid://clofywmpew7ij" path="res://Assets/sprites/coin.png" id="1_y70pc"]
+[ext_resource type="AudioStream" uid="uid://vh6wnsr2ig1q" path="res://Assets/sounds/coin.wav" id="3_smssm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mfw7"]
+atlas = ExtResource("1_y70pc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66mhi"]
+atlas = ExtResource("1_y70pc")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmac7"]
+atlas = ExtResource("1_y70pc")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvk1s"]
+atlas = ExtResource("1_y70pc")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhecv"]
+atlas = ExtResource("1_y70pc")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov0hn"]
+atlas = ExtResource("1_y70pc")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps6jp"]
+atlas = ExtResource("1_y70pc")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibql3"]
+atlas = ExtResource("1_y70pc")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_losvn"]
+atlas = ExtResource("1_y70pc")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3ev4"]
+atlas = ExtResource("1_y70pc")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bekuh"]
+atlas = ExtResource("1_y70pc")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mktjk"]
+atlas = ExtResource("1_y70pc")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hlmj7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mfw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66mhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmac7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvk1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhecv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov0hn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ps6jp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibql3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_losvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3ev4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bekuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mktjk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r6s3l"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_icqiq"]
+resource_name = "PickUp"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PickUpSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ck2vd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PickUpSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wo5dh"]
+_data = {
+"PickUp": SubResource("Animation_icqiq"),
+"RESET": SubResource("Animation_ck2vd")
+}
+
+[node name="Coin" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_k3516")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hlmj7")
+autoplay = "default"
+frame_progress = 0.766565
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.7, 0.7)
+shape = SubResource("CircleShape2D_r6s3l")
+one_way_collision_margin = 0.0
+
+[node name="PickUpSound" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(0.7, 0.7)
+stream = ExtResource("3_smssm")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wo5dh")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
